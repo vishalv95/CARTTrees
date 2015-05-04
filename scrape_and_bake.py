@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import urllib2 as ur
 import os
-#from scipy import stats as stat
 
 lookbacks = {'target': 7, 'SMA': 5, 'LMA':50, 'ACR':5, 'RSI':50}
 
@@ -55,10 +54,6 @@ def VOL(df, var, lookback):
     df['ma'] = ma
     df['var' + var] = conditions
 
-
-
-
-
 def MA(df, var, lookback):
     ma = []
     conditions = []
@@ -76,7 +71,6 @@ def MA(df, var, lookback):
         df['s_moving_average'] = ma
     else:
         df['l_moving_average'] = ma
-    
     df['var' + var] = conditions
 
 def ACR(df, var, lookback):
@@ -153,7 +147,6 @@ def RSI(df, var, lookback):
     df['rsi'] = rsi
     df['var' + var + 'binary'] = var_binary
     df['var' + var + 'tertiary'] = var_tertiary
-
 
 def target(df, lookback):
     #df = df[pd.notnull(df['Open']) and pd.notnull(df['Close'])]
