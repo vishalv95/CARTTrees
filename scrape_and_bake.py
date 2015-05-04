@@ -3,6 +3,7 @@ import numpy as np
 import urllib2 as ur
 import os
 
+
 lookbacks = {'target': 7, 'SMA': 5, 'LMA':50, 'ACR':5, 'RSI':50}
 
 def scraper():
@@ -16,8 +17,8 @@ def scraper():
         f = open('./raw_indices/' + file, 'w')
         for line in lines:
             f.write(line + '\n')
-        f.close()
-
+        f.close(
+)
 def baker():
     for file in os.listdir('./raw_indices'):
         df = pd.read_csv('./raw_indices/' + file)
@@ -117,14 +118,6 @@ def RSI(df, var, lookback):
     var_binary = []
     var_tertiary = []
     for i in range(len(df['Close'])):
-        # if close[i] > open[i]:
-        #     # up[i] = close[i] - open[i]
-        #     # down[i] = 'NA'
-        # else:
-        #     # down[i] = open[i] - close[i]
-        #     # up[i] = 'NA'
-
-        # delta[i] = close[i] - open[i]
         if i >= lookback:
             b = delta[i-lookback: i+1]
             rsi.append(100 - 100 / (1 + 
