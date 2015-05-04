@@ -1,0 +1,1 @@
+https://www.quandl.com/api/v1/datasets/GOOG/NYSE_SPY.csv?trim_start=2000-01-01
