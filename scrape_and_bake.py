@@ -40,7 +40,7 @@ def VOL(df, var, lookback):
     atr = []
     ma = []
     conditions = []
-    for i in range(len(close)):
+    for i in range(len(low)):
         if i >= lookback + 7:
             atr.append(np.mean(tr[i-lookback:i+1]))
             ma.append(np.mean(atr[i-7:i+1]))
@@ -53,6 +53,7 @@ def VOL(df, var, lookback):
             atr.append('NA')
             ma.append('NA')
             conditions.append('NA')
+    df['tr'] = tr
     df['atr'] = atr
     df['ma'] = ma
     df['var' + var] = conditions

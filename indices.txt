@@ -1,1 +1,2 @@
-https://www.quandl.com/api/v1/datasets/GOOG/NYSE_SPY.csv?trim_start=2000-01-01
+https://www.quandl.com/api/v1/datasets/GOOG/NYSE_SPY.csv?trim_start=2000-01-01&trim_end=2013-12-31
+https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_AAPL.csv?trim_start=2000-01-01&trim_end=2013-12-31
