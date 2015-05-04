@@ -3,7 +3,6 @@ import numpy as np
 import urllib2 as ur
 import os
 
-
 lookbacks = {'target': 7, 'SMA': 5, 'LMA':50, 'ACR':5, 'RSI':50}
 
 def scraper():
@@ -62,12 +61,10 @@ def MA(df, var, lookback):
     ma = []
     conditions = []
     close = np.array(df['Close'])
-    #print close
     for i in range(len(close)):
         if i >= lookback:
             ma.append(np.mean(close[i-lookback: i+1]))
             conditions.append(1 if close[i] > ma[i] else -1)
-            #print 'Close', close[i: i+1], 'MA', ma[i]
         else:
             ma.append('NA')
             conditions.append('NA')
@@ -108,8 +105,6 @@ def STR(df, var):
     df['var' + var] = strcon
 
 def RSI(df, var, lookback):
-    # up = []
-    # down = []
     delta = []
     rsi = []
     #df = df[pd.notnull(df['Open']) and pd.notnull(df['Close'])]
